@@ -15,9 +15,8 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "allowUmdGlobalAccess": true,
-    "baseUrl": "./src",
     "paths":{
-      "@components/*":["./components/*"]
+      "@components/*":["./src/components/*"]
     },
   },
   "include": ["./src"]
