@@ -6,14 +6,10 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
-import {
-  FiHome,
-  FiTrendingUp,
-  FiCompass,
-  FiStar,
-  FiSettings,
-} from 'react-icons/fi';
+import { FiHome } from 'react-icons/fi';
+import { AiOutlineStar, AiOutlineUnorderedList } from 'react-icons/ai';
 import { IconType } from 'react-icons/lib';
+import { useNavigate } from 'react-router-dom';
 import { NavItem } from '../NavItem';
 
 interface SidebarProps extends BoxProps {
@@ -23,14 +19,17 @@ interface SidebarProps extends BoxProps {
 interface LinkItemProps {
   name: string;
   icon: IconType;
+  value: string;
 }
 
 const LinkItems: Array<LinkItemProps> = [
-  { name: 'Home', icon: FiHome },
-  { name: 'Lista', icon: FiTrendingUp },
+  { name: 'Home', icon: FiHome, value: '/' },
+  { name: 'Lista', icon: AiOutlineUnorderedList, value: 'list' },
+  { name: 'Favoritos', icon: AiOutlineStar, value: 'favorites' },
 ];
 
 export const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
+  const navigate = useNavigate();
   return (
     <Box
       bg={useColorModeValue('white', 'gray.900')}
@@ -48,7 +47,11 @@ export const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
+        <NavItem
+          key={link.name}
+          icon={link.icon}
+          onClick={() => navigate(link.value)}
+        >
           {link.name}
         </NavItem>
       ))}

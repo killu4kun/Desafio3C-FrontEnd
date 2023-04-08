@@ -1,7 +1,7 @@
-import List from './pages/List';
+import Routes from './routes/index.routes';
 
 function App(): JSX.Element {
-  return <List />;
+  return <Routes />;
 }
 
 export default App;

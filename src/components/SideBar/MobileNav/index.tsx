@@ -31,7 +31,7 @@ export const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       />
 
       <Text fontSize="2xl" ml="8" fontFamily="monospace" fontWeight="bold">
-        Logo
+        Menu
       </Text>
     </Flex>
   );

@@ -6,6 +6,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 import { ReactNode } from 'react';
+import { Outlet } from 'react-router-dom';
 import { MobileNav } from './MobileNav';
 import { SidebarContent } from './SideBarContent';
 
@@ -33,7 +34,7 @@ export default function SimpleSidebar({ children }: { children?: ReactNode }) {
       {/* mobilenav */}
       <MobileNav display={{ base: 'flex', md: 'none' }} onOpen={onOpen} />
       <Box ml={{ base: 0, md: 60 }} p="4">
-        {children}
+        <Outlet />
       </Box>
     </Box>
   );
