@@ -27,6 +27,7 @@ export default function SimpleSidebar({ children }: { children?: ReactNode }) {
         onClose={onClose}
         returnFocusOnClose={false}
         onOverlayClick={onClose}
+        
         size="full"
       >
         <DrawerContent>

@@ -8,7 +8,10 @@ import {
   BoxProps,
   CloseButton,
   Flex,
+  List,
+  ListItem,
   Text,
+  UnorderedList,
   useColorModeValue,
 } from '@chakra-ui/react';
 
@@ -31,7 +34,6 @@ const LinkItems: Array<LinkItemProps> = [
 ];
 
 export function SidebarContent({ onClose, ...rest }: SidebarProps) {
-  const navigate = useNavigate();
   return (
     <Box
       bg={useColorModeValue('white', 'gray.900')}
@@ -44,19 +46,19 @@ export function SidebarContent({ onClose, ...rest }: SidebarProps) {
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
         <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          Logo
+          Menu
         </Text>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
-      {LinkItems.map((link) => (
-        <NavItem
-          key={link.name}
-          icon={link.icon}
-          onClick={() => navigate(link.value)}
-        >
-          {link.name}
-        </NavItem>
-      ))}
+      <List>
+        {LinkItems.map((link) => (
+          <ListItem key={link.name} onClick={onClose}>
+            <NavItem icon={link.icon} href={link.value}>
+              {link.name}
+            </NavItem>
+          </ListItem>
+        ))}
+      </List>
     </Box>
   );
 }

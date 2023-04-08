@@ -1,6 +1,6 @@
 import { BsArrowUpRight, BsHeart, BsHeartFill } from 'react-icons/bs';
 
-import { Box, Center, Flex, HStack, Text } from '@chakra-ui/react';
+import { Box, Center, Flex, HStack, Link, Text } from '@chakra-ui/react';
 
 function PokemonCard({ pokemon, liked, setLiked }: any) {
   return (
@@ -30,19 +30,22 @@ function PokemonCard({ pokemon, liked, setLiked }: any) {
           </Box>
         </Box>
         <HStack borderTop="1px" color="black">
-          <Flex
-            p={4}
-            alignItems="center"
-            justifyContent="space-between"
-            roundedBottom="sm"
-            cursor="pointer"
-            w="full"
-          >
-            <Text fontSize="md" fontWeight="semibold">
-              View more
-            </Text>
-            <BsArrowUpRight />
-          </Flex>
+          <Link href={pokemon.url}>
+            <Flex
+              as={'button'}
+              p={4}
+              alignItems="center"
+              justifyContent="space-between"
+              roundedBottom="sm"
+              cursor="pointer"
+              w="full"
+            >
+              <Text fontSize="md" fontWeight="semibold">
+                View more
+              </Text>
+              <BsArrowUpRight />
+            </Flex>
+          </Link>
           <Flex
             p={4}
             alignItems="center"
