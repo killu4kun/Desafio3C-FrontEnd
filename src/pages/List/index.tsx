@@ -45,6 +45,7 @@ function List() {
   if (loading) {
     return (
       <Spinner
+        role="status"
         thickness="4px"
         speed="0.65s"
         emptyColor="gray.200"

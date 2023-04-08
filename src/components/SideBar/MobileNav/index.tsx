@@ -21,6 +21,7 @@ export function MobileNav({ onOpen, ...rest }: MobileProps) {
       bg={useColorModeValue('white', 'gray.900')}
       borderBottomWidth="1px"
       borderBottomColor={useColorModeValue('gray.200', 'gray.700')}
+      data-testid="mobile-nav"
       justifyContent="flex-start"
       {...rest}
     >

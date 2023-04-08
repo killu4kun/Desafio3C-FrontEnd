@@ -8,14 +8,12 @@ import List from '../pages/List';
 
 export default function Routes() {
   return (
-    <BrowserRouter>
-      <Router>
-        <Route element={<SimpleSidebar />}>
-          <Route path="/" element={<Home />} />
-          <Route path="list" element={<List />} />
-          <Route path="favorites" element={<Favoritos />} />
-        </Route>
-      </Router>
-    </BrowserRouter>
+    <Router>
+      <Route element={<SimpleSidebar />}>
+        <Route path="/" element={<Home />} />
+        <Route path="list" element={<List />} />
+        <Route path="favorites" element={<Favoritos />} />
+      </Route>
+    </Router>
   );
 }

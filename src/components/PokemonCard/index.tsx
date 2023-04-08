@@ -24,13 +24,13 @@ function PokemonCard({ pokemon, liked, setLiked }: any) {
             color="white"
             mb={2}
           >
-            <Text fontSize="lg" fontWeight="medium">
+            <Text fontSize="lg" fontWeight="medium" data-testid='pokemons-names'>
               {pokemon.name}
             </Text>
           </Box>
         </Box>
         <HStack borderTop="1px" color="black">
-          <Link href={pokemon.url}>
+          <Link href={pokemon.url} data-testid="link">
             <Flex
               as={'button'}
               p={4}
@@ -56,9 +56,13 @@ function PokemonCard({ pokemon, liked, setLiked }: any) {
             onClick={setLiked}
           >
             {liked ? (
-              <BsHeartFill fill="red" fontSize="24px" />
+              <BsHeartFill
+                fill="red"
+                fontSize="24px"
+                data-testid="heart-icon2"
+              />
             ) : (
-              <BsHeart fontSize="24px" />
+              <BsHeart data-testid="heart-icon" fontSize="24px" />
             )}
           </Flex>
         </HStack>
