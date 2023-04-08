@@ -13,6 +13,7 @@ module.exports = {
   moduleNameMapper: {
     '.+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2|svg)$':
       'identity-obj-proxy',
+      ''
   },
   verbose: true,
   testTimeout: 30000,

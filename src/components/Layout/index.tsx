@@ -1,5 +1,6 @@
-import SimpleSidebar from '@components/SideBar';
 import { Outlet } from 'react-router-dom';
+
+import SimpleSidebar from '@components/SideBar';
 
 function Layout() {
   return (

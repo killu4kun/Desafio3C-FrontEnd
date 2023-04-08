@@ -1,10 +1,11 @@
+import axios from 'axios';
+
 import {
   configureStore,
   createAsyncThunk,
   createSlice,
   PayloadAction,
 } from '@reduxjs/toolkit';
-import axios from 'axios';
 
 export interface PokemonProps {
   name: string;

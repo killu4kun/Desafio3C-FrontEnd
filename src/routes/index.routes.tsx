@@ -1,5 +1,7 @@
+import { BrowserRouter, Route, Routes as Router } from 'react-router-dom';
+
 import SimpleSidebar from '@components/SideBar';
-import { Route, Routes as Router, BrowserRouter } from 'react-router-dom';
+
 import Favoritos from '../pages/Favoritos';
 import Home from '../pages/Home';
 import List from '../pages/List';

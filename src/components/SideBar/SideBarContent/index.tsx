@@ -1,3 +1,8 @@
+import { AiOutlineStar, AiOutlineUnorderedList } from 'react-icons/ai';
+import { FiHome } from 'react-icons/fi';
+import { IconType } from 'react-icons/lib';
+import { useNavigate } from 'react-router-dom';
+
 import {
   Box,
   BoxProps,
@@ -6,10 +11,7 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { FiHome } from 'react-icons/fi';
-import { AiOutlineStar, AiOutlineUnorderedList } from 'react-icons/ai';
-import { IconType } from 'react-icons/lib';
-import { useNavigate } from 'react-router-dom';
+
 import { NavItem } from '../NavItem';
 
 interface SidebarProps extends BoxProps {
@@ -28,7 +30,7 @@ const LinkItems: Array<LinkItemProps> = [
   { name: 'Favoritos', icon: AiOutlineStar, value: 'favorites' },
 ];
 
-export const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
+export function SidebarContent({ onClose, ...rest }: SidebarProps) {
   const navigate = useNavigate();
   return (
     <Box
@@ -57,4 +59,4 @@ export const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       ))}
     </Box>
   );
-};
+}

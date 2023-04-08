@@ -1,3 +1,5 @@
+import { useSelector } from 'react-redux';
+
 import {
   Box,
   Container,
@@ -7,7 +9,7 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import PokemonCard from '@components/PokemonCard';
-import { useSelector } from 'react-redux';
+
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { PokemonProps, RootState } from '../../store';
 
@@ -39,12 +41,12 @@ function Favoritos() {
 
   return (
     <Box>
-      <Container display="flex" flexDir="column" maxW={'6xl'} mt={10}>
+      <Container display="flex" flexDir="column" maxW="6xl" mt={10}>
         <Heading>Favoritos</Heading>
         <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={10}>
           {favourites.length != 0 ? (
             favourites.map((pokemon) => (
-              <VStack key={pokemon.url} align={'top'}>
+              <VStack key={pokemon.url} align="top">
                 <PokemonCard
                   key={pokemon.url}
                   pokemon={pokemon}

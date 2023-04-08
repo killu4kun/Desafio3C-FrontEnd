@@ -1,11 +1,12 @@
-import { Flex, Link, Icon, FlexProps } from '@chakra-ui/react';
 import { IconType } from 'react-icons';
+
+import { Flex, FlexProps, Icon, Link } from '@chakra-ui/react';
 
 interface NavItemProps extends FlexProps {
   icon: IconType;
   children: string;
 }
-export const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
+export function NavItem({ icon, children, ...rest }: NavItemProps) {
   return (
     <Link
       href="#"
@@ -39,4 +40,4 @@ export const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
       </Flex>
     </Link>
   );
-};
+}

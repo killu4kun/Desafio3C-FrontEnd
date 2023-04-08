@@ -1,3 +1,6 @@
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import {
   Box,
   Container,
@@ -7,9 +10,8 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import PokemonCard from '@components/PokemonCard';
+
 import { useLocalStorage } from '../../hooks/useLocalStorage';
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import {
   AppDispatch,
   fetchPokemons,
@@ -54,11 +56,11 @@ function List() {
 
   return (
     <Box>
-      <Container display="flex" flexDir="column" maxW={'6xl'} mt={10}>
+      <Container display="flex" flexDir="column" maxW="6xl" mt={10}>
         <Heading>Lista de pokemons</Heading>
         <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={10}>
           {pokemons.map((pokemon) => (
-            <VStack key={pokemon.url} align={'top'}>
+            <VStack key={pokemon.url} align="top">
               <PokemonCard
                 key={pokemon.url}
                 pokemon={pokemon}

@@ -1,3 +1,5 @@
+import { FiMenu } from 'react-icons/fi';
+
 import {
   Flex,
   FlexProps,
@@ -5,12 +7,11 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { FiMenu } from 'react-icons/fi';
 
 interface MobileProps extends FlexProps {
   onOpen: () => void;
 }
-export const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
+export function MobileNav({ onOpen, ...rest }: MobileProps) {
   return (
     <Flex
       ml={{ base: 0, md: 60 }}
@@ -35,4 +36,4 @@ export const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       </Text>
     </Flex>
   );
-};
+}
