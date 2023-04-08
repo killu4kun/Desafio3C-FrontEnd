@@ -34,17 +34,18 @@ const pokemonsSlice = createSlice({
       state.pokemons.splice(action.payload, 1);
     },
   },
-  extraReducers: {
-    [String(fetchPokemons.pending)]: (state) => {
-      state.loading = true;
-    },
-    [String(fetchPokemons.fulfilled)]: (state, action) => {
-      state.pokemons = action.payload;
-      state.loading = false;
-    },
-    [String(fetchPokemons.rejected)]: (state) => {
-      state.loading = false;
-    },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchPokemons.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(fetchPokemons.fulfilled, (state, action) => {
+        state.pokemons = action.payload;
+        state.loading = false;
+      })
+      .addCase(fetchPokemons.rejected, (state) => {
+        state.loading = false;
+      });
   },
 });
 
