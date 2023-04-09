@@ -8,8 +8,8 @@ frontend:
 
 ## Installing Dependencies
 
-    $ git clone git@github.com:killu4kun/pokemon-list-challenge.git
-    $ cd pokemon-list-challenge
+    $ git clone git@github.com:killu4kun/Desafio3C-FrontEnd.git
+    $ cd Desafio3C-FrontEnd
     $ yarn
 ## Running tests 
     $ yarn test
